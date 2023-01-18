@@ -8,6 +8,9 @@
     <artifactId>cloud2020</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <modules>
+        <module>cloud-provider-payment8001</module>
+    </modules>
 
     <!-- 统一管理jar包版本 -->
     <properties>
@@ -25,6 +28,7 @@
     <!-- 1、只是声明依赖，并不实际引入，子项目按需声明使用的依赖 -->
     <!-- 2、子项目可以继承父项目的 version 和 scope -->
     <!-- 3、子项目若指定了 version 和 scope，以子项目为准 -->
+    <!-- 4. 子模块继承之后提供作用: 锁定版本 同时子模块不用写groupID和version-->
     <dependencyManagement>
     <dependencies>
         <!--spring boot 2.2.2-->
