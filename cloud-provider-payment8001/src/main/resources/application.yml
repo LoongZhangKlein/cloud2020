@@ -16,4 +16,5 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  #使用 后缀
   type-aliases-package: com.atguigu.springcloud.entities
