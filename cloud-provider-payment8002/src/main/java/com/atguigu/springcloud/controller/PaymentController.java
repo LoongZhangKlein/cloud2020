@@ -20,6 +20,7 @@ public class PaymentController {
     private PaymentService paymentService;
     @Value("${server.port}")
     private String serverPort;
+
     /**
      * 此处不添加RequestBody不能收到值
      * @param payment
@@ -29,7 +30,7 @@ public class PaymentController {
     public CommonResult create(@RequestBody Payment payment){
         int i = paymentService.create(payment);
         if (i>0){
-            return new CommonResult(200,"添加成功");
+            return new CommonResult(200,"添加成功 ");
         }
         return new CommonResult<>(404,"添加失败");
     }
@@ -37,7 +38,7 @@ public class PaymentController {
     public CommonResult select(@PathVariable("id") Long id){
         Payment paymentById = paymentService.getPaymentById(id);
         if (paymentById!=null){
-            return new CommonResult(200,"查询成功 端口号"+serverPort,paymentById);
+            return new CommonResult(200,"查询成功 端口号:"+serverPort,paymentById);
         }
         return new CommonResult<>(400,"添加失败");
     }

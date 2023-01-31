@@ -3,7 +3,7 @@ package com.atguigu.springcloud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * @author loongzhang
@@ -11,11 +11,10 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @date ${DATE}-${TIME}
  */
 @SpringBootApplication
-@EnableEurekaClient
-public class ConsumerOrder80 {
+@EnableEurekaServer
+public class CloudEurekaServer7002 {
     public static void main(String[] args) {
-        ConfigurableApplicationContext run = SpringApplication.run(ConsumerOrder80.class, args);
-
-        System.out.println(run.getEnvironment().getProperty("server.port")+"启动成功!!!");
+        SpringApplication.run(CloudEurekaServer7002.class,args);
+        System.out.println("CloudEurekaServer7002 启动成功");
     }
 }

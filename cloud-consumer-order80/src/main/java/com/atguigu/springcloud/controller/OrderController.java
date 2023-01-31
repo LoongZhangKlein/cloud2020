@@ -17,7 +17,11 @@ import javax.annotation.Resource;
 @Slf4j
 @RequestMapping("/consumer/payment")
 public class OrderController {
-    private static final String PAYMENT_URL="http://localhost:8001";
+    /**
+     * 端口号不能写死了
+     */
+    //private static final String PAYMENT_URL="http://localhost:8001";
+    private static final String PAYMENT_URL="http://CLOUD-PAYMENT-SERVICE";
     @Resource
     private RestTemplate restTemplate;
     @PostMapping("/create")
